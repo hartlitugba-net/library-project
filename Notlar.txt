@@ -1,0 +1,9 @@
+1. Bütün kitap objelerini bir array içinde tutacağız.
+2. Book constructor oluşturacağız. yani objeler.fonksiyonla tanımlayacağız bir kitap fabrikası oluşturmuş olacağız.
+3.Kitaplara ID vereceğiz.crypto.randomUUID() komutu ile rastgele üreteceğiz.
+4.addBookToLibrary fonksiyonu
+5.Kitapları ekranda göstermek:displayBooks() fonksiyonu yapacağız.
+6. New Book butonu:basınca form açılacak:tittle,author,pages,read,add eklenecek.
+7.preventDefault():"Tarayıcı sen kendi bildiğini yapma, ben kontrol edeceğim."
+8.Her kitap kartında delete olacak
+9.Toggle Read:Kitabın kundu durumunu ekleyeceğiz. Bunu prototype ile istiyor.

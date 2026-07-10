@@ -1,0 +1,92 @@
+body{
+    font-family:verdana, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h1{
+    color: hwb(315 9% 44%);
+    text-align: center;
+}
+#new-book-btn{
+    display: block;
+    margin:20px auto;
+    padding: 10px 20px;
+    background-color: oklab(75.246% 0.13353 -0.01337);
+    color: #fff;
+    border:none;
+    border-radius: 9px;
+    font-size: 16px;
+}
+#new-book-btn:hover{
+    background-color: oklab(53.185% 0.00075 0.00178 / 0.8);
+    cursor: pointer;
+}
+dialog{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 13px;
+    box-shadow: 0 2px 10px hsla(0, 76%, 45%, 0.593);
+    padding: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+label{
+   font-weight: bold;
+   color: lab(37.44% 24.91 -58.54);
+    font-size: 16px;
+}
+input[type="text"], input[type="number"]{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+#submit-btn{
+    padding: 10px 20px;
+    background-color: oklab(75.246% 0.13353 -0.01337);
+    color: #fff;
+    border:none;
+    border-radius: 9px;
+    font-size: 16px;
+}
+#submit-btn:hover{
+    background-color: oklab(53.185% 0.00075 0.00178 / 0.8);
+    cursor: pointer;
+}
+.card{
+    background-color: hsla(100, 84%, 65%, 0.238);
+    padding: 20px;
+    border-radius: 13px;
+    box-shadow: 0 2px 10px hwb(131 11% 21% / 0.426);
+    margin-bottom: 20px;
+}
+#book-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    gap: 20px;
+}
+.card button:first-of-type {
+    background-color: crimson;
+    color: #9a7190;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.card button:last-of-type {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+
+
