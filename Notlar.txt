@@ -7,3 +7,32 @@
 7.preventDefault():"Tarayıcı sen kendi bildiğini yapma, ben kontrol edeceğim."
 8.Her kitap kartında delete olacak
 9.Toggle Read:Kitabın kundu durumunu ekleyeceğiz. Bunu prototype ile istiyor.
+myLibrary
+    |
+    |
+    ↓
+forEach(book)
+    |
+    |
+    ↓
+div oluştur
+(document.createElement)
+    |
+    |
+    ↓
+Bilgileri içine koy
+(textContent)
+    |
+    |
+    ↓
+Parçaları birleştir
+(appendChild)
+    |
+    |
+    ↓
+HTML'e ekle
+(bookContainer.appendChild)
+    |
+    |
+    ↓
+Kullanıcı ekranda görür

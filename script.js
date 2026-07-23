@@ -1,52 +1,50 @@
-const bookContainer = document.getElementById("book-container");
+const bookContainer = document.getElementById("book-container");//verilerin ekranda gösterileceği alan
 
 const myLibrary = [];
 
 
-function Book(title, author, pages, read)
+class Book
 {
-    this.id = crypto.randomUUID();
+    constructor(title, author, pages, read)
+    {
+         this.id = crypto.randomUUID();
 
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 }
-
-
 // Kitabın okunma durumunu değiştirir
-Book.prototype.toggleRead = function()
+toggleRead()
 {
     this.read = !this.read;
 }
-
-
-
+    }
+   
 function addBookToLibrary(title, author, pages, read)
 {
     const book = new Book(title, author, pages, read);
 
-    myLibrary.push(book);
+    myLibrary.push(book); // kitap dizisine eklenir
 }
 
-
-
-function displayBooks()
+//kitap listesini html e yerleştirme
+function displayBooks() // kitap listesini ekranda gösterir
 {
-    bookContainer.innerHTML = "";
+    bookContainer.innerHTML = "";// önceki kitapları temizler
 
 
     myLibrary.forEach(book => {
 
 
-        const card = document.createElement("div");
+        const card = document.createElement("div");//yeni bir div oluştur ve bunu card isimli değişkende sakla diyoruz
 
-        card.dataset.id = book.id;
+        card.dataset.id = book.id; //"Bu div'in HTML data-id bilgisini, mevcut kitabın id'si yap."
 
 
         const title = document.createElement("h2");
 
-        title.textContent = book.title;
+        title.textContent = book.title; ////kitap başlığını h2 elementinin içine yazdırır
 
 
 
@@ -74,22 +72,17 @@ function displayBooks()
             status.textContent = "Not read yet";
         }
 
-
-
         // Remove butonu
 
         const removeBtn = document.createElement("button");
 
         removeBtn.textContent = "Remove";
 
-
-
         removeBtn.addEventListener("click", () => {
 
             removeBook(book.id);
 
         });
-
 
 
         // Toggle Read butonu
@@ -108,11 +101,9 @@ function displayBooks()
 
         });
 
-
-
         // Kartın içine ekleme
 
-        card.appendChild(title);
+        card.appendChild(title);// "Bu h2 elementini div'in içine koy."
 
         card.appendChild(author);
 
@@ -126,17 +117,13 @@ function displayBooks()
 
 
 
-        bookContainer.appendChild(card);
+        bookContainer.appendChild(card); //"Bu oluşturduğum kartı HTML içindeki book-container'ın içine koy."
 
 
     });
 
 }
-
-
-
-
-
+//kullanıcı etkileşimi
 function removeBook(id)
 {
 
@@ -153,14 +140,7 @@ function removeBook(id)
 
 }
 
-
-
-
-
 displayBooks();
-
-
-
 
 
 const newBookBtn = document.getElementById("new-book-btn");
@@ -172,11 +152,8 @@ const dialog = document.getElementById("book-dialog");
 const bookForm = document.getElementById("book-form");
 
 
-
-
-
-newBookBtn.addEventListener("click", () => {
-
+newBookBtn.addEventListener("click", () => { //addEventListener ile butonu dinlemeye başla yani butona tıklanıldığı zaman
+//click yerine JavaScript'in tanıdığı olay (event) isimler de yazılabilir.
 
     dialog.showModal();
 
@@ -184,16 +161,10 @@ newBookBtn.addEventListener("click", () => {
 });
 
 
-
-
-
-
 bookForm.addEventListener("submit", (event)=>{
 
 
     event.preventDefault();
-
-
 
     const title = document.getElementById("title").value;
 
@@ -205,7 +176,6 @@ bookForm.addEventListener("submit", (event)=>{
 
 
     const read = document.getElementById("read").checked;
-
 
 
     addBookToLibrary(
@@ -221,13 +191,9 @@ bookForm.addEventListener("submit", (event)=>{
     );
 
 
-
     displayBooks();
 
-
-
     dialog.close();
-
 
     bookForm.reset();
 
