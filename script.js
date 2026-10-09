@@ -165,31 +165,52 @@ bookForm.addEventListener("submit", (event)=>{
 
 
     event.preventDefault();
+const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
 
-    const title = document.getElementById("title").value;
+    const titleError = document.getElementById("title-error");
+    const authorError = document.getElementById("author-error");
+    const pagesError = document.getElementById("pages-error");
 
+    // Önce eski hata mesajlarını temizle
+    titleError.textContent = "";
+    authorError.textContent = "";
+    pagesError.textContent = "";
 
-    const author = document.getElementById("author").value;
+    let isValid = true;
 
+    // Title kontrolü
+    if (title.value.trim() === "") {
+        titleError.textContent = "Kitap adı doldurulmalıdır!";
+        isValid = false;
+    }
 
-    const pages = document.getElementById("pages").value;
+    // Author kontrolü
+    if (author.value.trim() === "") {
+        authorError.textContent = "Yazar adı doldurulmalıdır!";
+        isValid = false;
+    }
 
+    // Pages kontrolü
+    if (pages.value.trim() === "") {
+        pagesError.textContent = "Sayfa sayısı doldurulmalıdır!";
+        isValid = false;
+    }
+
+    // Herhangi bir alan hatalıysa kitap ekleme
+    if (!isValid) {
+        return;
+    }
 
     const read = document.getElementById("read").checked;
 
-
     addBookToLibrary(
-
-        title,
-
-        author,
-
-        pages,
-
+        title.value,
+        author.value,
+        pages.value,
         read
-
     );
-
 
     displayBooks();
 

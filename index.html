@@ -17,12 +17,13 @@
     
     <dialog id="book-dialog">
 
-    <form id="book-form">
+    <form id="book-form" novalidate>
 
         <label>
             Title:
             <input type="text" id="title" required> 
         </label>
+        <span id="title-error"> </span>
 
         <br>
 
@@ -30,12 +31,14 @@
             Author:
             <input type="text" id="author" required>
         </label>
+        <span id="author-error"> </span>
 
         <br>
         <label>
             Pages:
             <input type="number" id="pages" required>
         </label>
+        <span id="pages-error"> </span>
 
         <br>
 
@@ -43,6 +46,8 @@
             Read:
             <input type="checkbox" id="read">
         </label>
+        <span id="read-error"> </span>
+
 
         <br>
 

@@ -87,6 +87,14 @@ input[type="text"], input[type="number"]{
     cursor: pointer;
     margin-left: 8px;
 }
+#title-error,
+#author-error,
+#pages-error {
+    color: red;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
 
 
 
